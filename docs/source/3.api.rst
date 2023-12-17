@@ -1,0 +1,94 @@
+API Reference
+=============
+
+Below is the class and function reference for the MMDB class. Please note that the package is under active development, and some features may not be stable yet.
+
+        
+MMDB
+------------------
+
+The MMDB class is a tool for interacting with a data repository. It provides functions for retrieving dataset information, downloading datasets, and listing datasets based on specific criteria.
+
+.. code-block:: python
+
+    # Class Definition
+    MMDB(storage_path=None)
+
+- **storage_path**: The path for storing the downloaded data.
+
+Methods
+*******
+
+.. code-block:: python
+
+    # Method
+    mmdb.list_species() -> None
+
+- Lists all available species.
+
+.. code-block:: python
+
+    # Method
+    mmdb.list_tissue() -> None
+
+- Lists all available tissue types.
+
+.. code-block:: python
+
+    # Method
+    mmdb.list_disease() -> None
+
+- Lists all available diseases.
+
+.. code-block:: python
+
+    # Method
+    mmdb.list_technology_type() -> None
+
+- Lists all available technology types.
+
+.. code-block:: python
+
+    # Method
+    mmdb.list_technology() -> None
+
+- Lists all available technologies.
+
+.. code-block:: python
+
+    # Method
+    mmdb.list_dataset(species=None, tissue=None, disease=None, technology_type=None) -> pandas.DataFrame
+
+- **species**: Filters datasets by species.
+- **tissue**: Filters datasets by tissue type.
+- **disease**: Filters datasets by disease.
+- **technology_type**: Filters datasets by technology type.
+- Returns a DataFrame containing the filtered datasets.
+
+.. code-block:: python
+
+    # Method
+    mmdb.load_dataset(dataset_id) -> dict
+
+- **dataset_id**: The unique identifier of the dataset.
+- Downloads and loads the dataset identified by the given dataset ID.
+- Returns a dictionary where keys are data types and values are the corresponding data.
+
+Example
+*******
+
+.. code-block:: python
+
+    from mmdb import MMDB
+    
+    # Create an instance of MMDB
+    mmdb = MMDB(storage_path="path/to/storage")
+
+    # List available species
+    mmdb.list_species()
+
+    # Retrieve dataset information
+    datasets = mmdb.list_dataset(species="Homo sapiens")
+
+    # Load a specific dataset
+    dataset = mmdb.load_dataset("[Dataset_ID]")
