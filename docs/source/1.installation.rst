@@ -1,0 +1,40 @@
+Installation Guide
+==================
+
+Installation
+--------------
+
+pymmdb requires Python version 3.7, 3.8 or 3.9. 
+
+The package is available on PyPI and can be installed using pip:
+
+.. code-block:: bash
+
+    $ pip install pymmdb
+
+pymmdb is under active development and can be installed from the source code. The source code is available on GitHub:
+
+.. code-block:: bash
+
+    # 1. Clone the source code from GitHub
+    $ git clone https://github.com/ljw-struggle/pymmdb.git
+    $ cd pymmdb
+    # 2. Create a conda environment and activate it.
+    $ conda env create -n pymmdb --file env.yml
+    $ conda activate pymmdb
+    # 3. Install pymmdb as a dependency or third-party package with pip.
+    $ python setup.py install
+
+
+Quick Start
+------------
+
+To verify your installation, you can run the following test code.
+
+.. code-block:: python
+
+    import pymmdb
+    mmdb = pymmdb.MMDB()
+
+The program will not output any error messages if the installation is successful.
+
